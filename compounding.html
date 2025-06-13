@@ -291,11 +291,11 @@
             const q = questions[currentQuestionIndex];
             questionNumberSpan.textContent = `Question ${currentQuestionIndex + 1}/${maxQuestions}:`;
             questionTextDiv.innerHTML = `
-                The following shows the components and amounts of <strong class="text-lime-700">${q.initialTotalAmount}${q.initialUnit}</strong> of a medicine:<br>
+                The following shows the components and amounts of <strong class="text-blue-700">${q.initialTotalAmount}${q.initialUnit}</strong> of a medicine:<br>
                 Ingredient A - <strong class="text-blue-700">${q.amountA}${q.initialUnit}</strong><br>
                 Ingredient B - <strong class="text-blue-700">${q.amountB}${q.initialUnit}</strong><br>
                 (Carrier cream to top up to ${q.initialTotalAmount}${q.initialUnit})<br><br>
-                How much of ingredient A, B, and carrier cream do you need in order to make <strong class="text-blue-700">${q.targetTotalAmount}${q.initialUnit}</strong> of cream total?
+                How much of ingredient A, B, and carrier cream do you need in order to make <strong class="text-lime-700">${q.targetTotalAmount}${q.initialUnit}</strong> of cream total?
             `;
             answerInputA.value = ''; // Clear previous answer
             answerInputB.value = ''; // Clear previous answer
