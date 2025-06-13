@@ -291,7 +291,7 @@
             const q = questions[currentQuestionIndex];
             questionNumberSpan.textContent = `Question ${currentQuestionIndex + 1}/${maxQuestions}:`;
             questionTextDiv.innerHTML = `
-                The following shows the components and amounts of <strong class="text-blue-700">${q.initialTotalAmount}${q.initialUnit}</strong> of a medicine:<br>
+                The following shows the components and amounts of <strong class="text-lime-700">${q.initialTotalAmount}${q.initialUnit}</strong> of a medicine:<br>
                 Ingredient A - <strong class="text-blue-700">${q.amountA}${q.initialUnit}</strong><br>
                 Ingredient B - <strong class="text-blue-700">${q.amountB}${q.initialUnit}</strong><br>
                 (Carrier cream to top up to ${q.initialTotalAmount}${q.initialUnit})<br><br>
