@@ -3,527 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmacist Compounding Math Quiz</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <title>My GitHub Pages Website</title>
+    <!-- Tailwind CSS CDN for basic styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Light blue-gray background */
+            font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+            background-color: #f4f7f6;
+            color: #333;
             display: flex;
+            flex-direction: column;
+            min-height: 100vh;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
         }
         .container {
             background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 700px; /* Slightly wider for more text */
+            padding: 2.5rem; /* Equivalent to p-10 */
+            border-radius: 1.5rem; /* Equivalent to rounded-3xl */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-xl */
             text-align: center;
-            box-sizing: border-box;
+            max-width: 90%;
+            width: 500px;
         }
-        input[type="text"] {
-            border: 2px solid #cbd5e0; /* Light gray border */
-            padding: 12px 15px;
-            border-radius: 8px;
-            width: calc(100% - 30px); /* Adjust for padding */
-            margin-top: 10px;
-            font-size: 1.125rem;
-            outline: none;
-            transition: border-color 0.2s;
+        h1 {
+            color: #1a202c; /* Equivalent to text-gray-900 */
+            margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+            font-size: 2.25rem; /* Equivalent to text-4xl */
+            font-weight: bold;
         }
-        input[type="text"]:focus {
-            border-color: #6366f1; /* Indigo focus border */
-        }
-        button {
-            background-color: #4f46e5; /* Indigo */
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: background-color 0.2s, transform 0.1s;
-        }
-        button:hover {
-            background-color: #4338ca; /* Darker indigo on hover */
-            transform: translateY(-2px);
-        }
-        button:active {
-            transform: translateY(0);
-        }
-        .message-box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+        nav ul {
+            list-style: none;
+            padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+            flex-direction: column;
+            gap: 1rem; /* Equivalent to space-y-4 */
         }
-        .message-content {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-            position: relative;
+        nav li {
+            margin: 0;
         }
-        .message-content button {
-            margin-top: 20px;
-            background-color: #4f46e5;
-        }
-        .correct {
-            color: #10b981; /* Emerald green */
-            font-weight: 600;
-        }
-        .incorrect {
-            color: #ef4444; /* Red */
-            font-weight: 600;
-        }
-        .score-display {
-            font-size: 1.125rem;
-            margin-top: 20px;
-            color: #475569; /* Slate gray */
-        }
-        .input-group {
-            margin-bottom: 15px;
-        }
-        .input-group label {
+        nav a {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #334155; /* Darker slate gray */
-            text-align: left;
-            padding-left: 15px; /* Align with input */
+            padding: 0.75rem 1.25rem; /* Equivalent to px-5 py-3 */
+            background-color: #6366f1; /* Equivalent to bg-indigo-500 */
+            color: #ffffff; /* Equivalent to text-white */
+            text-decoration: none;
+            border-radius: 0.75rem; /* Equivalent to rounded-xl */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
         }
-        .question-text-area {
-            text-align: left; /* Align question text left */
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+        nav a:hover {
+            background-color: #4f46e5; /* Equivalent to hover:bg-indigo-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .gamification-message {
-            margin-top: 15px;
-            font-style: italic;
-            color: #64748b; /* Slate 500 */
+        @media (min-width: 640px) { /* sm breakpoint */
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+            }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1 class="text-3xl font-extrabold text-gray-800 mb-6">Compounding Math Quiz</h1>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="container bg-white p-10 rounded-3xl shadow-xl">
+        <h1 class="text-4xl font-bold text-gray-900 mb-6">Welcome to My Website!</h1>
+        <p class="text-gray-700 mb-8">This is the `index.html` page. You can navigate to other pages using the links below.</p>
 
-        <!-- Start Quiz Section -->
-        <div id="start-screen" class="p-4">
-            <p class="text-lg text-gray-700 mb-6">
-                Calculate ingredient amounts for different total medicine volumes, including the carrier cream! <br/>
-                Use alt + 230 to get micro (µ) symbol!
-            </p>
-            <button id="start-quiz-btn">Start Quiz</button>
-        </div>
+        <nav class="mt-8">
+            <ul class="flex flex-col sm:flex-row justify-center gap-4">
+                <li><a href="page-a.html" class="px-5 py-3 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition duration-300 ease-in-out">Go to Page A</a></li>
+                <li><a href="page-b.html" class="px-5 py-3 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition duration-300 ease-in-out">Go to Page B</a></li>
+                <li><a href="page-c.html" class="px-5 py-3 bg-indigo-500 text-white rounded-xl hover:bg-indigo-600 transition duration-300 ease-in-out">Go to Page C</a></li>
+            </ul>
+        </nav>
 
-        <!-- Quiz Section (hidden initially) -->
-        <div id="quiz-screen" class="hidden">
-            <div class="text-xl font-semibold text-gray-800 mb-4">
-                <span id="question-number"></span>
-            </div>
-            <div id="question-text" class="question-text-area text-lg text-gray-700 leading-relaxed mb-6"></div>
-
-            <div class="input-group">
-                <label for="answer-input-A">Ingredient A:</label>
-                <input type="text" id="answer-input-A" placeholder="e.g., 1.4mg">
-            </div>
-            <div class="input-group">
-                <label for="answer-input-B">Ingredient B:</label>
-                <input type="text" id="answer-input-B" placeholder="e.g., 2.7mg">
-            </div>
-            <div class="input-group">
-                <label for="answer-input-C">Carrier Cream:</label>
-                <input type="text" id="answer-input-C" placeholder="e.g., 975mg">
-            </div>
-
-            <button id="submit-answer-btn">Submit Answer</button>
-            <p id="feedback" class="mt-4 text-lg"></p>
-            <p id="score-display" class="score-display">Score: 0/0</p>
-            <p id="gamification-message" class="gamification-message"></p>
-        </div>
-
-        <!-- End Quiz Section (hidden initially) -->
-        <div id="end-screen" class="hidden p-4">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Quiz Finished!</h2>
-            <p id="final-score" class="text-xl font-bold text-blue-600 mb-6"></p>
-            <p id="final-gamification-message" class="text-xl font-bold text-gray-800 mb-6"></p>
-            <button id="download-results-btn">Download Results</button>
-            <button id="restart-quiz-btn" class="ml-4 bg-gray-500 hover:bg-gray-600">Start New Quiz</button>
-        </div>
-
-        <!-- Custom Message Box -->
-        <div id="message-box" class="message-box hidden">
-            <div class="message-content rounded-xl">
-                <h3 id="message-title" class="text-xl font-bold mb-4"></h3>
-                <p id="message-body" class="text-lg text-gray-700 mb-6"></p>
-                <button id="message-ok-btn">OK</button>
-            </div>
-        </div>
-
+        <footer class="mt-10 text-gray-500 text-sm">
+            &copy; 2025 My GitHub Pages Site. All rights reserved.
+        </footer>
     </div>
-
-    <script>
-        // DOM Elements
-        const startScreen = document.getElementById('start-screen');
-        const startQuizBtn = document.getElementById('start-quiz-btn');
-        const quizScreen = document.getElementById('quiz-screen');
-        const questionNumberSpan = document.getElementById('question-number');
-        const questionTextDiv = document.getElementById('question-text');
-        const answerInputA = document.getElementById('answer-input-A');
-        const answerInputB = document.getElementById('answer-input-B');
-        const answerInputC = document.getElementById('answer-input-C'); // New: Carrier Cream input
-        const submitAnswerBtn = document.getElementById('submit-answer-btn');
-        const feedbackParagraph = document.getElementById('feedback');
-        const scoreDisplayParagraph = document.getElementById('score-display');
-        const gamificationMessage = document.getElementById('gamification-message'); // New: In-quiz gamification message
-        const endScreen = document.getElementById('end-screen');
-        const finalScoreParagraph = document.getElementById('final-score');
-        const finalGamificationMessage = document.getElementById('final-gamification-message'); // New: End-quiz gamification message
-        const downloadResultsBtn = document.getElementById('download-results-btn');
-        const restartQuizBtn = document.getElementById('restart-quiz-btn');
-
-        const messageBox = document.getElementById('message-box');
-        const messageTitle = document.getElementById('message-title');
-        const messageBody = document.getElementById('message-body');
-        const messageOkBtn = document.getElementById('message-ok-btn');
-
-        // Quiz State Variables
-        let questions = []; // Stores objects like { initialTotal, amountA, amountB, carrierCreamInitial, targetTotal, correctA, correctB, correctCarrierCream }
-        let userAnswers = []; // Stores objects like { question, userAnswerA, userAnswerB, userAnswerC, correctA, correctB, correctC, isCorrect }
-        let score = 0; // Total correct questions (all parts correct)
-        let currentQuestionIndex = 0;
-        const maxQuestions = 3;
-        const initialUnits = ['mg', 'g', 'kg']; // Keeping it simple as requested
-        const precision = 3; // Decimal places for comparison and display
-
-        /**
-         * Displays a custom message box.
-         * @param {string} title - The title of the message.
-         * @param {string} body - The main content of the message.
-         */
-        function showMessageBox(title, body) {
-            messageTitle.textContent = title;
-            messageBody.textContent = body;
-            messageBox.classList.remove('hidden');
-        }
-
-        /**
-         * Hides the custom message box.
-         */
-        function hideMessageBox() {
-            messageBox.classList.add('hidden');
-        }
-
-        /**
-         * Generates a single random compounding question.
-         * @returns {object} An object containing question details and correct answers.
-         */
-        function generateRandomQuestion() {
-            // Initial mixture total amount (mg)
-            const initialTotalAmounts = [500, 1000, 2000, 2500];
-            const initialTotalAmount = initialTotalAmounts[Math.floor(Math.random() * initialTotalAmounts.length)];
-            const initialUnit = initialUnits[Math.floor(Math.random() * initialUnits.length)]
-
-            // Ingredient amounts (e.g., 1% to 10% of total)
-            let amountA = Math.floor(Math.random() * (initialTotalAmount / 10 - 1)) + 1; // 1 to ~10% of total
-            let amountB = Math.floor(Math.random() * (initialTotalAmount / 10 - 1)) + 1; // 1 to ~10% of total
-
-            // Ensure amounts are distinct and sum is less than total
-            while (amountA === amountB || (amountA + amountB) >= initialTotalAmount * 0.5 || amountA <= 0 || amountB <= 0) { // Ensure enough carrier cream and positive amounts
-                amountA = Math.floor(Math.random() * (initialTotalAmount / 10 - 1)) + 1;
-                amountB = Math.floor(Math.random() * (initialTotalAmount / 10 - 1)) + 1;
-            }
-
-            const carrierCreamInitial = initialTotalAmount - amountA - amountB;
-
-            // Target total amount (can be less or more than initial)
-            const targetTotalAmountMultipliers = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5];
-            const targetTotalAmount = initialTotalAmount * targetTotalAmountMultipliers[Math.floor(Math.random() * targetTotalAmountMultipliers.length)];
-
-            // Calculate ratios
-            const ratioA = amountA / initialTotalAmount;
-            const ratioB = amountB / initialTotalAmount;
-
-            // Calculate correct amounts for the target total
-            const correctAmountA = (ratioA * targetTotalAmount);
-            const correctAmountB = (ratioB * targetTotalAmount);
-            const correctCarrierCream = targetTotalAmount - correctAmountA - correctAmountB; // Calculate based on target total
-
-            return {
-                initialTotalAmount,
-                initialUnit,
-                amountA,
-                amountB,
-                carrierCreamInitial, // Initial carrier cream for question text
-                targetTotalAmount,
-                correctAmountA,
-                correctAmountB,
-                correctCarrierCream // Correct carrier cream for target total
-            };
-        }
-
-        /**
-         * Displays the current question on the screen.
-         */
-        function displayQuestion() {
-            const q = questions[currentQuestionIndex];
-            questionNumberSpan.textContent = `Question ${currentQuestionIndex + 1}/${maxQuestions}:`;
-            questionTextDiv.innerHTML = `
-                The following shows the components and amounts of <strong class="text-blue-700">${q.initialTotalAmount}${q.initialUnit}</strong> of a medicine:<br>
-                Ingredient A - <strong class="text-blue-700">${q.amountA}${q.initialUnit}</strong><br>
-                Ingredient B - <strong class="text-blue-700">${q.amountB}${q.initialUnit}</strong><br>
-                (Carrier cream to top up to ${q.initialTotalAmount}${q.initialUnit}, which is <strong class="text-blue-700">${q.carrierCreamInitial}${q.initialUnit}</strong>)<br><br>
-                How much of ingredient A, B, and carrier cream do you need in order to make <strong class="text-blue-700">${q.targetTotalAmount}${q.initialUnit}</strong> of cream total?
-            `;
-            answerInputA.value = ''; // Clear previous answer
-            answerInputB.value = ''; // Clear previous answer
-            answerInputC.value = ''; // Clear previous answer for Carrier Cream
-            feedbackParagraph.textContent = ''; // Clear feedback
-            scoreDisplayParagraph.textContent = `Score: ${score}/${currentQuestionIndex}`;
-            gamificationMessage.textContent = ''; // Clear gamification message for new question
-            answerInputA.focus(); // Focus input for quick answering
-
-            // Gamification message based on current score
-            if (currentQuestionIndex > 0) { // Only show after the first question
-                if (score === currentQuestionIndex) { // All correct so far
-                    gamificationMessage.textContent = `Excellent streak! Keep it up for a perfect score! 🚀`;
-                    gamificationMessage.classList.remove('incorrect');
-                    gamificationMessage.classList.add('correct');
-                } else if (score >= currentQuestionIndex * 0.7) { // Good but not perfect
-                    gamificationMessage.textContent = `Doing great! You can still ace this quiz. 💪`;
-                    gamificationMessage.classList.remove('incorrect');
-                    gamificationMessage.classList.add('correct');
-                } else {
-                    gamificationMessage.textContent = `Every question is a chance to learn! You've got this. ✨`;
-                    gamificationMessage.classList.remove('correct');
-                    gamificationMessage.classList.add('incorrect');
-                }
-            }
-        }
-
-        /**
-         * Parses user input (number and unit).
-         * @param {string} inputString - The user's input string (e.g., "1.4mg").
-         * @returns {object|null} An object with {value, unit} or null if invalid.
-         */
-        function parseUserInput(inputString) {
-            const userInput = inputString.trim().toLowerCase();
-            // Regex to parse number (including decimals and optional negative sign) and unit
-            const match = userInput.match(/^(-?\d+(\.\d+)?)\s*([a-z]+)$/);
-            if (match) {
-                return {
-                    value: parseFloat(match[1]),
-                    unit: match[3]
-                };
-            }
-            return null;
-        }
-
-        /**
-         * Checks the user's answers against the correct answers.
-         */
-        function checkAnswer() {
-            const userInputA = answerInputA.value;
-            const userInputB = answerInputB.value;
-            const userInputC = answerInputC.value; // New: Carrier Cream input
-            const currentQ = questions[currentQuestionIndex];
-
-            const parsedA = parseUserInput(userInputA);
-            const parsedB = parseUserInput(userInputB);
-            const parsedC = parseUserInput(userInputC); // Parse Carrier Cream input
-
-            let isCorrectA = false;
-            let isCorrectB = false;
-            let isCorrectC = false; // New: Carrier Cream correctness
-
-            const tolerance = 0.001; // Small tolerance for floating-point comparison
-
-            // Check Ingredient A
-            if (parsedA && Math.abs(parsedA.value - currentQ.correctAmountA) < tolerance && parsedA.unit === currentQ.initialUnit) {
-                isCorrectA = true;
-            }
-
-            // Check Ingredient B
-            if (parsedB && Math.abs(parsedB.value - currentQ.correctAmountB) < tolerance && parsedB.unit === currentQ.initialUnit) {
-                isCorrectB = true;
-            }
-
-            // Check Carrier Cream (New)
-            if (parsedC && Math.abs(parsedC.value - currentQ.correctCarrierCream) < tolerance && parsedC.unit === currentQ.initialUnit) {
-                isCorrectC = true;
-            }
-
-
-            let feedbackText = '';
-            let overallCorrect = false;
-
-            if (isCorrectA && isCorrectB && isCorrectC) { // All three must be correct now
-                feedbackText = 'Correct! All three ingredients are correct.';
-                score++;
-                overallCorrect = true;
-                feedbackParagraph.classList.remove('incorrect');
-                feedbackParagraph.classList.add('correct');
-            } else {
-                feedbackText = 'Incorrect. ';
-                if (!isCorrectA) {
-                    feedbackText += `Ingredient A: Your answer '${userInputA}' is wrong. Correct: ${currentQ.correctAmountA.toFixed(precision)}${currentQ.initialUnit}. `;
-                }
-                if (!isCorrectB) {
-                    feedbackText += `Ingredient B: Your answer '${userInputB}' is wrong. Correct: ${currentQ.correctAmountB.toFixed(precision)}${currentQ.initialUnit}. `;
-                }
-                if (!isCorrectC) { // New: Carrier Cream feedback
-                    feedbackText += `Carrier Cream: Your answer '${userInputC}' is wrong. Correct: ${currentQ.correctCarrierCream.toFixed(precision)}${currentQ.initialUnit}.`;
-                }
-                feedbackParagraph.classList.remove('correct');
-                feedbackParagraph.classList.add('incorrect');
-            }
-
-            // Record the question and user's attempt for results file
-            userAnswers.push({
-                question: questionTextDiv.innerText.replace(/\n/g, ' ').replace(/\s+/g, ' '), // Cleaned question text
-                userAnswerA: userInputA,
-                userAnswerB: userInputB,
-                userAnswerC: userInputC, // New: Record carrier cream answer
-                correctAnswerA: `${currentQ.correctAmountA.toFixed(precision)}${currentQ.initialUnit}`,
-                correctAnswerB: `${currentQ.correctAmountB.toFixed(precision)}${currentQ.initialUnit}`,
-                correctAnswerC: `${currentQ.correctCarrierCream.toFixed(precision)}${currentQ.initialUnit}`, // New: Record correct carrier cream
-                isCorrect: overallCorrect
-            });
-
-            currentQuestionIndex++;
-
-            if (currentQuestionIndex < maxQuestions) {
-                setTimeout(displayQuestion, 500); // Short delay to show feedback
-            } else {
-                setTimeout(endQuiz, 500);
-            }
-        }
-
-        /**
-         * Ends the quiz, displays the final score, and enables download button.
-         */
-        function endQuiz() {
-            quizScreen.classList.add('hidden');
-            endScreen.classList.remove('hidden');
-            finalScoreParagraph.textContent = `You scored ${score} out of ${maxQuestions} questions!`;
-
-            // Gamification message at the end
-            if (score === maxQuestions) {
-                finalGamificationMessage.textContent = `Absolutely outstanding! You got a perfect score! 🎉🌟`;
-                finalGamificationMessage.classList.add('correct');
-            } else if (score >= maxQuestions - 2) {
-                finalGamificationMessage.textContent = `Great job! You're almost there. Keep practicing! 👍`;
-                finalGamificationMessage.classList.add('correct');
-            } else {
-                finalGamificationMessage.textContent = `Good effort! Keep practicing to master compounding calculations. You'll get there! 📚`;
-                finalGamificationMessage.classList.add('incorrect');
-            }
-            finalGamificationMessage.classList.remove('hidden');
-        }
-
-        /**
-         * Generates the results text and prompts the user to download it.
-         */
-        function downloadResults() {
-            let resultsText = `Compounding Quiz Results:\n`;
-            resultsText += `Total Score: ${score}/${maxQuestions}\n\n`;
-
-            userAnswers.forEach((item, index) => {
-                resultsText += `--- Question ${index + 1} ---\n`;
-                resultsText += `Question: ${item.question}\n`;
-                resultsText += `Your Answer (A): ${item.userAnswerA}\n`;
-                resultsText += `Correct Answer (A): ${item.correctAnswerA}\n`;
-                resultsText += `Your Answer (B): ${item.userAnswerB}\n`;
-                resultsText += `Correct Answer (B): ${item.correctAnswerB}\n`;
-                resultsText += `Your Answer (Cream): ${item.userAnswerC}\n`; // New: Carrier cream answer
-                resultsText += `Correct Answer (Cream): ${item.correctAnswerC}\n`; // New: Correct carrier cream answer
-                resultsText += `Result: ${item.isCorrect ? 'Correct' : 'Incorrect'}\n\n`;
-            });
-
-            const blob = new Blob([resultsText], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'compounding_quiz_results.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-
-            showMessageBox('Download Complete', 'Your quiz results have been downloaded as compounding_quiz_results.txt.');
-        }
-
-        /**
-         * Initializes and starts a new quiz.
-         */
-        function startQuiz() {
-            // Reset state
-            questions = [];
-            userAnswers = [];
-            score = 0;
-            currentQuestionIndex = 0;
-            gamificationMessage.textContent = ''; // Clear gamification message on start
-            finalGamificationMessage.textContent = ''; // Clear final gamification message
-
-            // Generate all questions for the quiz
-            for (let i = 0; i < maxQuestions; i++) {
-                questions.push(generateRandomQuestion());
-            }
-
-            // Hide start/end screens, show quiz screen
-            startScreen.classList.add('hidden');
-            endScreen.classList.add('hidden');
-            quizScreen.classList.remove('hidden');
-
-            displayQuestion(); // Display the first question
-        }
-
-        // Event Listeners
-        startQuizBtn.addEventListener('click', startQuiz);
-        submitAnswerBtn.addEventListener('click', checkAnswer);
-        downloadResultsBtn.addEventListener('click', downloadResults);
-        restartQuizBtn.addEventListener('click', startQuiz); // Restart button on end screen
-        messageOkBtn.addEventListener('click', hideMessageBox); // Close message box
-
-        // Allow pressing Enter key to navigate inputs and submit
-        answerInputA.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                answerInputB.focus();
-            }
-        });
-        answerInputB.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                answerInputC.focus();
-            }
-        });
-        answerInputC.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                submitAnswerBtn.click();
-            }
-        });
-    </script>
 </body>
 </html>
