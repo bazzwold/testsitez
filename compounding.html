@@ -242,7 +242,7 @@
          */
         function generateRandomQuestion() {
             // Initial mixture total amount (mg)
-            const initialTotalAmounts = [500, 1000, 2000, 2500];
+            const initialTotalAmounts = [200, 500, 1000, 1250, 1500, 2000, 2200, 2500];
             const initialTotalAmount = initialTotalAmounts[Math.floor(Math.random() * initialTotalAmounts.length)];
             const initialUnit = initialUnits[Math.floor(Math.random() * initialUnits.length)]
 
@@ -259,7 +259,7 @@
             const carrierCreamInitial = initialTotalAmount - amountA - amountB;
 
             // Target total amount (can be less or more than initial)
-            const targetTotalAmountMultipliers = [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.5];
+            const targetTotalAmountMultipliers = [0.5, 0.75, 0.9, 1.25, 1.5, 1.75, 2, 2.5, 3];
             const targetTotalAmount = initialTotalAmount * targetTotalAmountMultipliers[Math.floor(Math.random() * targetTotalAmountMultipliers.length)];
 
             // Calculate ratios
